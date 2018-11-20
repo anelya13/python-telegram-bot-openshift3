@@ -6,8 +6,7 @@ from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
 from telegram.ext import Dispatcher, CommandHandler, MessageHandler, Updater, Filters, CallbackQueryHandler
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-logger = logging.getLogger(__name__)
+                    level=logging.INFO/logger = logging.getLogger(__name__)
 TOKEN = '783982541:AAEBU1m5fRplBfcNFozSMLoOTwO5HzIFXCI'
 
 
@@ -19,23 +18,21 @@ def open(bot, update):
 
 
 
-def help(bot, update):
+def biber(bot, update):
     """Send a message when the command /help is issued."""
-    # update.message.reply_text('You can get any help here.')
-
-    keyboardButtons = [[InlineKeyboardButton("Помощь", callback_data="1")],
-                       [InlineKeyboardButton("Примеры", callback_data="2")],
-                       [InlineKeyboardButton("Ссылка", url="http://google.com")]]
+    keyboardButtons = [[InlineKeyboardButton("Nothing like us", callback_data="1")],
+                       [InlineKeyboardButton("Life is worth living", callback_data="2")],
+                       [InlineKeyboardButton("Bieber's site", url="www.justinbiebermusic.com")]]
     keyboard = InlineKeyboardMarkup(keyboardButtons)
-    update.message.reply_text('Сделайте выбор:', reply_markup=keyboard)
+    update.message.reply_text("Which Bieber's song do you prefer", reply_markup=keyboard)
 
 
 def button(bot, update):
     query = update.callback_query
     if query.data == "1":
-        text = "Song 1"
+        text = "Lately I've been thinkin'/Thinkin' 'bout what we had/I know it was hard/It was all that we knew/Have you been drinkin'/To take all the pain away?/I wish that I could give you what you deserve/'Cause nothing can ever/Ever replace you/Nothing can make me feel like you do/You know there's no one/I can relate to/And know we won't find a love that's so true/There's nothing like us/There's nothing like you and me/Together through the storm/There's nothing like us/There's nothing like you and me/Together/I gave you everything, baby/Well, everything I had to give/Girl, why would you push me away?/Lost in confusion/Like an illusion/You know I'm used to making your day"
     elif query.data == "2":
-        text = "3+4, 44-12, 43/2, 12*90"
+        text = "Ended up on a crossroad/Try to figure out which way to go/It's like you're stuck on a treadmill/Running in the same place/You got your hazard lights on now/Hoping that somebody would slow down/Praying for a miracle/Who'll show you grace?"
     bot.editMessageText(text=text, chat_id=query.message.chat_id,
                         message_id=query.message.message_id)
 
