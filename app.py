@@ -54,7 +54,7 @@ def setup(webhook_url=None):
         bot = updater.bot
         dp = updater.dispatcher  # Get the dispatcher to register handlers
         dp.add_handler(CommandHandler("open", open))  # on /start command answer in Telegram
-        dp.add_handler(CommandHandler("help", help))  # on /help command answer in Telegram
+        dp.add_handler(CommandHandler("biber", biber))  # on /help command answer in Telegram
         dp.add_handler(CallbackQueryHandler(button))
 
         # log all errors
