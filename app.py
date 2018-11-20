@@ -11,11 +11,12 @@ logger = logging.getLogger(__name__)
 TOKEN = '783982541:AAEBU1m5fRplBfcNFozSMLoOTwO5HzIFXCI'
 
 
-def start(bot, update):
+def open(bot, update):
     """Send a message when the command /start is issued."""
     """update.message.reply_text('Welcome to the Test Bot! I will reply you what you will write me.')"""
     bot.send_message(chat_id=update.message.chat_id,
-                     text='<b>KAZGUU site</b>,<a href="http://kazguu.kz/ru/">KAZGUU</a>', parse_mode=ParseMode.HTML)
+                     text='<b>Библиотека КАЗГЮУ </b>,<a href="http://kazguu.kz/ru/">Библиотека</a>', parse_mode=ParseMode.HTML)
+
 
 
 def help(bot, update):
