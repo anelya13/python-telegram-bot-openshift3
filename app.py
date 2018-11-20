@@ -19,7 +19,7 @@ def open(bot, update):
 
 
 
-def biber(bot, update):
+def bieber(bot, update):
     """Send a message when the command /help is issued."""
     keyboardButtons = [[InlineKeyboardButton("Nothing like us", callback_data="1")],
                        [InlineKeyboardButton("Life is worth living", callback_data="2")],
@@ -55,7 +55,7 @@ def setup(webhook_url=None):
         bot = updater.bot
         dp = updater.dispatcher  # Get the dispatcher to register handlers
         dp.add_handler(CommandHandler("open", open))  # on /start command answer in Telegram
-        dp.add_handler(CommandHandler("biber", biber))  # on /help command answer in Telegram
+        dp.add_handler(CommandHandler("bieber", bieber))  # on /help command answer in Telegram
         dp.add_handler(CallbackQueryHandler(button))
 
         # log all errors
